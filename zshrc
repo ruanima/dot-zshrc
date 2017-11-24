@@ -7,7 +7,8 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell-x"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -93,6 +94,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# for osx
+# bindkey "^[^[[D" forward-word
+# bindkey "^[^[[C" backward-word
+
+# for wsl 
 # start sshd
 if [[ $(pgrep sshd | wc -l) -eq 0 ]]; then
     mkdir -p  /var/run/sshd
@@ -101,11 +107,12 @@ if [[ $(pgrep sshd | wc -l) -eq 0 ]]; then
     echo 'start sshd service'
 fi
 
-# start sshd
-if [[ $(pgrep polipo | wc -l) -eq 0 ]]; then
-    polipo socksParentProxy=localhost:1280 &> /dev/null &
-    echo 'start convert shadowsocks to http service'
-fi
+## start polipo
+#if [[ $(pgrep polipo | wc -l) -eq 0 ]]; then
+#    polipo socksParentProxy=localhost:1280 &> /dev/null &
+#    echo 'start convert shadowsocks to http service'
+#fi
+
 
 # proxy 
 is_proxyed=0 
